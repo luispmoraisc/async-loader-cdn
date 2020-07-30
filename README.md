@@ -82,6 +82,11 @@ myLoaders
   .catch((err) => console.log(err));
 ```
 
+## Examples
+
+- Usage with `firebase` [here](https://github.com/luispmoraisc/async-loader-cdn/blob/master/examples/firebase.js)
+- Usage with list parameter [here](https://github.com/luispmoraisc/async-loader-cdn/blob/master/examples/list.js)
+
 ## How to contribute
 
 To contribute to the project, fork this repository;
