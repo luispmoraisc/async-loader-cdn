@@ -36,28 +36,6 @@ export default class AsyncLoaderCDN {
 
   /**
    * @memberof AsyncLoaderCDN
-   * @description Método responsável por carregar e instanciar o firebase
-   * @method connectFirebase
-   * @returns {Array}
-   */
-  async connectFirebase() {
-    const { _useFirebase } = privateProperties.get(this);
-
-    if (!_useFirebase) return;
-    if (Object.keys(_useFirebase).length < 1) throw new Error('You need provide a firebase object config. Check docs.');
-
-    try {
-      const list = await connect(_useFirebase);
-      if (!list) return [];
-      return list;
-    } catch (err) {
-      console.log(err); // eslint-disable-line
-      return [];
-    }
-  }
-
-  /**
-   * @memberof AsyncLoaderCDN
    * @description Método responsável por fazer o carregamento dos ativos
    * @param {String} project Nome do modulo
    * @param {String} version Versão do módulo caso utilize versões diferentes
@@ -71,7 +49,7 @@ export default class AsyncLoaderCDN {
     if (project === '' || !project) throw new Error('Expected name of the project');
 
     if (!_projects || (_projects.length <= 0 && _useFirebase)) {
-      const list = await this.connectFirebase();
+      const list = await connect(_useFirebase);
       listProjects = list;
       setPrivateProperties(privateProperties, this, {
         _projects: _projects.concat(list),

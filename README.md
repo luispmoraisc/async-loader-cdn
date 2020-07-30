@@ -17,13 +17,6 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
-<p align="center">
-  <a href="#-instalation">Instalation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-what-is-async-load-cdn">Why is AsyncLoaderCDN?</a>
-  <a href="#-how-to-use">How to use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-license">License</a>
-</p>
-
 ## Instalation
 
 Using npm:
@@ -34,9 +27,15 @@ $ npm i async-loader-cdn
 
 ## What is AsyncLoaderCDN
 
-As some libraries are very extensive and large, including them in the project even with “tree shaking”, “code
-splitting”, in addition to requiring a more advanced configuration (just like in the case of webpack) can generate a
-final large file (like firebase library for example).
+The AsyncLoaderCDN is a module that exposes a configurable class, where it has just one method: `loader`. This method is
+responsible for reading an informed list (either a fixed list or a firebase return), locating the item specified as a
+parameter in the method and uploading all necessary files. The load method returns a `Promise` when resolved it contains
+the global reference of what was loaded.
+
+As some libraries are very extensive and large, including them in the project even with
+[tree shaking](https://webpack.js.org/guides/tree-shaking/),
+[code splitting](https://webpack.js.org/guides/code-splitting/), in addition to requiring a more advanced configuration
+(just like in the case of webpack) can generate a final large file (like firebase library for example).
 
 With AsyncLoaderCDN you can:
 
@@ -56,14 +55,40 @@ With AsyncLoaderCDN you can:
 
 After installing, you can use in the following ways:
 
-### Required
-
-```javascript
-const asyncLoader = require('async-loader-cdn');
-```
-
 ### Import
 
 ```javascript
 import asyncLoader from 'async-loader-cdn';
+const list = [
+  (global: '_'),
+  (name: 'lodash'),
+  (version: ''),
+  (files: [
+    {
+      file: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js',
+      type: 'script',
+    }
+  ]),
+];
+
+// use async/await
+const myLoaders = new asyncLoader(files);
+myLoaders
+  .load('lodash')
+  .then((_) => {
+    if (!_) return console.log('erro');
+    console.log(_.VERSION);
+  })
+  .catch((err) => console.log(err));
 ```
+
+## How to contribute
+
+To contribute to the project, fork this repository;
+
+- Create a branch with your feature;
+- Commit your changes;
+- Push to your branch;
+- Open a PR for the master;
+
+After the PR is approved and the merge occurs, you can delete your branch.

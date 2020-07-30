@@ -65,6 +65,8 @@ const loadFile = async (src = '', type = '', global = '', resolve) => {
  * @description Método responsável pela instancia do firebase
  */
 const connect = async (firebaseConfig = {}) => {
+  if (Object.keys(firebaseConfig).length < 1) throw new Error('You need provide a firebase object config. Check docs.');
+
   const { collection, doc, property } = firebaseConfig.search;
 
   if (!collection || collection === '' || !doc || doc === '')
