@@ -2,7 +2,7 @@
     Async Loader CDN
 </h1>
 
-<img src="https://github.com/luispmoraisc/async-loader-cdn/blob/master/assets/logo.png" height="300px"/>
+<img src="https://github.com/luispmoraisc/async-loader-cdn/blob/master/assets/text.png" height="80px"/>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/luispmoraisc/async-loader-cdn.svg">
