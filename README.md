@@ -84,7 +84,7 @@ myLoaders
 
 # Important
 
-If you decide to use list parameter, you need to send a list that the struct:
+If you decide to use the list parameter, you need to send a list with this structure (contract):
 
 ```javascript
 const list = [

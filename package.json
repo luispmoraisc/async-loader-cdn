@@ -4,15 +4,28 @@
   "description": "Load any CDN async",
   "main": "./dist/async-loader-cdn.min.js",
   "module": "./dist/async-loader-cdn.min.js",
+  "homepage": "https://github.com/luispmoraisc/async-loader-cdn",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --open --watch --display-error-details --config ./config/webpack.dev --env=./.env --mode development",
     "build": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/webpack --config ./config/webpack.prod  --env=./.env --mode production",
     "docs": "./node_modules/.bin/jsdoc -c jsdoc.json",
     "prettier": "./node_modules/.bin/prettier --write --loglevel=debug"
   },
+  "keywords": [
+    "javascript",
+    "async",
+    "cdn",
+    "lazy",
+    "performance",
+    "ondemand"
+  ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/luispmoraisc/async-loader-cdn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luispmoraisc/async-loader-cdn/issues",
+    "email": "luispmoraisc@gmail.com"
   },
   "author": "Luis Paulo Morais Cardoso",
   "license": "ISC",
