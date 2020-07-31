@@ -71,7 +71,7 @@ export default class AsyncLoaderCDN {
         return element !== false;
       };
 
-      if (values.every(check)) {
+      if (values && values.every(check)) {
         return window[global];
       }
 

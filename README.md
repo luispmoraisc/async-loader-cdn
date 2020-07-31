@@ -25,7 +25,7 @@ Using npm:
 $ npm i async-loader-cdn
 ```
 
-## What is AsyncLoaderCDN
+## What is AsyncLoaderCDN?
 
 The AsyncLoaderCDN is a module that exposes a configurable class, where it has just one method: `loader`. This method is
 responsible for reading an informed list (either a fixed list or a firebase return), locating the item specified as a
@@ -80,6 +80,26 @@ myLoaders
     console.log(_.VERSION);
   })
   .catch((err) => console.log(err));
+```
+
+# Important
+
+If you decide to use list parameter, you need to send a list that the struct:
+
+```javascript
+const list = [
+  {
+    global: String, // global variable name of the module or project. Ex.: '$' if you want to load jQuery
+    name: String, // name that asyncLoaderCDN will look for when the load method is called. Ex.: 'jQuery'
+    version: <String|Int>, // if you need distribute multiple versions of the same module.
+    files: [
+      {
+        file: String, // link of CDN.
+        type: String, // type of file to load [script|link].
+      },
+    ],
+  },
+];
 ```
 
 ## Examples

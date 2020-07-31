@@ -51,7 +51,7 @@ const loadFile = async (src = '', type = '', global = '', resolve) => {
       type,
     });
 
-    const loadModule = await file.load();
+    const loadModule = await file?.load();
     resolve(loadModule);
   } catch (err) {
     console.error('Ocurred error when loading files, check cdn and version'); // eslint-disable-line
@@ -74,8 +74,8 @@ const connect = async (firebaseConfig = {}) => {
 
   delete firebaseConfig.search;
   const db = await loadFirebase(firebaseConfig);
-  const collectionFirebase = await db.collection(collection).doc('modules').get();
-  const returned = collectionFirebase.data();
+  const collectionFirebase = await db?.collection(collection)?.doc('modules')?.get();
+  const returned = collectionFirebase?.data();
   return returned[property];
 };
 
