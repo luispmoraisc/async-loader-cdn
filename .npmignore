@@ -1,0 +1,12 @@
+assets/
+config/
+docs/
+examples/
+src/
+jsdoc.json
+.prettierrc
+.eslintrc
+.eslintignore
+.env
+.editorconfig
+.babelrc

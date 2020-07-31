@@ -12,7 +12,7 @@ module.exports = (env, args) => {
     output: {
       jsonpFunction: `webpackJsonp${Date.now()}`,
       path: path.resolve(__dirname, '../dist'),
-      filename: '[name].min.js',
+      filename: 'index.js',
       library: 'asyncLoaderCDN',
       libraryTarget: 'umd',
       umdNamedDefine: true,

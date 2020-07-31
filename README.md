@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://github.com/luispmoraisc/async-loader-cdn/blob/master/assets/logo.png" height="80px"/>
+  <img src="https://github.com/luispmoraisc/async-loader-cdn/blob/master/assets/logo.png?raw=true" height="80px"/>
 </h1>
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/luispmoraisc/async-loader-cdn.svg">
@@ -27,8 +27,8 @@ $ npm i async-loader-cdn
 
 ## What is AsyncLoaderCDN?
 
-The AsyncLoaderCDN is a module that exposes a configurable class, where it has just one method: `loader`. This method is
-responsible for reading an informed list (either a fixed list or a firebase return), locating the item specified as a
+The `AsyncLoaderCDN` is a module that exposes a configurable class, where it has just one method: `loader`. This method
+is responsible for reading an informed list (either a fixed list or a firebase return), locating the item specified as a
 parameter in the method and uploading all necessary files. The load method returns a `Promise` when resolved it contains
 the global reference of what was loaded.
 
@@ -37,7 +37,7 @@ As some libraries are very extensive and large, including them in the project ev
 [code splitting](https://webpack.js.org/guides/code-splitting/), in addition to requiring a more advanced configuration
 (just like in the case of webpack) can generate a final large file (like firebase library for example).
 
-With AsyncLoaderCDN you can:
+With `AsyncLoaderCDN` you can:
 
 - Significantly reduce your work and the size of the generated files.
 - Load resources at runtime and asynchronous mode according to the needs of the aplication state (load on demand)

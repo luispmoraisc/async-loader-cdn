@@ -1,9 +1,9 @@
 {
   "name": "async-loader-cdn",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "Load any CDN async",
-  "main": "./dist/async-loader-cdn.min.js",
-  "module": "./dist/async-loader-cdn.min.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "homepage": "https://github.com/luispmoraisc/async-loader-cdn",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --open --watch --display-error-details --config ./config/webpack.dev --env=./.env --mode development",
@@ -17,7 +17,7 @@
     "cdn",
     "lazy",
     "performance",
-    "ondemand"
+    "dynamic imports"
   ],
   "repository": {
     "type": "git",
@@ -80,8 +80,5 @@
       "git add"
     ]
   },
-  "browserslist": "last 2 versions, IE 11, not ie <= 8",
-  "files": [
-    "./dist"
-  ]
+  "browserslist": "last 2 versions, IE 11, not ie <= 8"
 }
