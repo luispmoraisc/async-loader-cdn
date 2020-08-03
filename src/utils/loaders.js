@@ -74,7 +74,7 @@ const connect = async (firebaseConfig = {}) => {
 
   delete firebaseConfig.search;
   const db = await loadFirebase(firebaseConfig);
-  const collectionFirebase = await db?.collection(collection)?.doc('modules')?.get();
+  const collectionFirebase = await db?.collection(collection)?.doc(doc)?.get();
   const returned = collectionFirebase?.data();
   return returned[property];
 };
