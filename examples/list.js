@@ -6,12 +6,7 @@ const files = [
     global: '_',
     name: 'lodash',
     version: '',
-    files: [
-      {
-        file: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js',
-        type: 'script',
-      },
-    ],
+    files: ['https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js'],
   },
 ];
 
