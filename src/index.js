@@ -1,3 +1,3 @@
 import AsyncLoaderCDN from './loader';
 
-module.exports = AsyncLoaderCDN;
+export default AsyncLoaderCDN;
