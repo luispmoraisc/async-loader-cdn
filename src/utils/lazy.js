@@ -33,7 +33,6 @@ export default class Lazy {
       _src: options.src || '',
       _global: options.global || '',
       _async: options.async || false,
-      _type: options.type || 'script',
     });
 
     this.isLoaded = false;
@@ -46,10 +45,12 @@ export default class Lazy {
    * @return {HTMLElement}
    */
   decisorType() {
-    const { _src, _async, _type } = privateProperties.get(this);
+    const { _src, _async } = privateProperties.get(this);
+    if (!_src) throw new Error(`You didn't provide a src`);
+    const type = _src.split('.').pop();
 
-    if (_type === 'script') return createElement('script', { type: 'text/javascript', async: _async, src: _src });
-    else if (_type === 'link') return createElement('link', { rel: 'stylesheet', href: _src });
+    if (type === 'js') return createElement('script', { type: 'text/javascript', async: _async, src: _src });
+    else if (type === 'css') return createElement('link', { rel: 'stylesheet', href: _src });
   }
 
   /**

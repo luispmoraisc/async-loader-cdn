@@ -25,6 +25,37 @@ Using npm:
 $ npm i async-loader-cdn
 ```
 
+# UPDATES
+
+Change the property `files` of list config:
+
+```javascript
+//of
+const list = [
+  {
+    global: '_',
+    name: 'lodash',
+    version: '',
+    files: [
+      {
+        file: String, // link of CDN.
+        type: String, // type of file to load [script|link].
+      },
+    ];
+  },
+];
+
+//for
+const list = [
+  {
+    global: '_',
+    name: 'lodash',
+    version: '',
+    files: ['https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js'],
+  },
+];
+```
+
 ## What is AsyncLoaderCDN?
 
 The `AsyncLoaderCDN` is a module that exposes a configurable class, where it has just one method: `loader`. This method
@@ -60,15 +91,12 @@ After installing, you can use in the following ways:
 ```javascript
 import asyncLoader from 'async-loader-cdn';
 const list = [
-  (global: '_'),
-  (name: 'lodash'),
-  (version: ''),
-  (files: [
-    {
-      file: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js',
-      type: 'script',
-    }
-  ]),
+  {
+    global: '_',
+    name: 'lodash',
+    version: '',
+    files: ['https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js'],
+  },
 ];
 
 // use async/await
@@ -92,12 +120,7 @@ const list = [
     global: String, // global variable name of the module or project. Ex.: '$' if you want to load jQuery
     name: String, // name that asyncLoaderCDN will look for when the load method is called. Ex.: 'jQuery'
     version: <String|Int>, // if you need distribute multiple versions of the same module.
-    files: [
-      {
-        file: String, // link of CDN.
-        type: String, // type of file to load [script|link].
-      },
-    ],
+    files: [String],
   },
 ];
 ```
