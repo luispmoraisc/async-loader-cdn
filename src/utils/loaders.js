@@ -42,13 +42,12 @@ const loadFirebase = async (firebaseConfig = {}) => {
  * @function loadFile
  * @description Método responsável por fazer os carregamentos da CDN
  */
-const loadFile = async (src = '', type = '', global = '', resolve) => {
+const loadFile = async (src = '', global = '', resolve) => {
   try {
-    if (!src || !type) throw new Error('The properties link and type is required.');
+    if (!src) throw new Error('The properties link and type is required.');
     const file = new Lazy({
       src,
       global,
-      type,
     });
 
     const loadModule = await file?.load();

@@ -61,9 +61,8 @@ export default class AsyncLoaderCDN {
 
     const { files, global } = projectSchema;
 
-    const filesToLoad = files.map((item) => {
-      const { file, type } = item;
-      return new Promise((resolve) => loadFile(file, type, global, resolve));
+    const filesToLoad = files.map((file) => {
+      return new Promise((resolve) => loadFile(file, global, resolve));
     });
 
     return Promise.all(filesToLoad).then((values) => {

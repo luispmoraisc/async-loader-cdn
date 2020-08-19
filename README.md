@@ -60,15 +60,12 @@ After installing, you can use in the following ways:
 ```javascript
 import asyncLoader from 'async-loader-cdn';
 const list = [
-  (global: '_'),
-  (name: 'lodash'),
-  (version: ''),
-  (files: [
-    {
-      file: 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js',
-      type: 'script',
-    }
-  ]),
+  {
+    global: '_',
+    name: 'lodash',
+    version: '',
+    files: ['https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js'],
+  },
 ];
 
 // use async/await
