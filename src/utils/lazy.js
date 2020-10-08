@@ -72,7 +72,7 @@ export default class Lazy {
         this.isLoaded = false;
         reject(new Error(`Failed load ${_src}`));
       };
-      head.append(load);
+      head.appendChild(load);
     });
   }
 

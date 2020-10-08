@@ -2,6 +2,6 @@
   "plugins": [
     "@babel/plugin-transform-modules-umd",
     "@babel/plugin-proposal-optional-chaining",
-    "@babel/plugin-transform-runtime"
+    ["@babel/plugin-transform-runtime", { "corejs": 3 }]
   ]
 }
