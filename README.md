@@ -25,36 +25,10 @@ Using npm:
 $ npm i async-loader-cdn
 ```
 
-# UPDATES
+## UPDATES
 
-Change the property `files` of list config:
-
-```javascript
-//of
-const list = [
-  {
-    global: '_',
-    name: 'lodash',
-    version: '',
-    files: [
-      {
-        file: String, // link of CDN.
-        type: String, // type of file to load [script|link].
-      },
-    ];
-  },
-];
-
-//for
-const list = [
-  {
-    global: '_',
-    name: 'lodash',
-    version: '',
-    files: ['https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.19/lodash.min.js'],
-  },
-];
-```
+- Change browser support to > 25%
+- Resolve fixture head.append to head.appendChild
 
 ## What is AsyncLoaderCDN?
 
