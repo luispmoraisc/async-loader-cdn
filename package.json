@@ -1,6 +1,6 @@
 {
   "name": "async-loader-cdn",
-  "version": "1.0.9",
+  "version": "1.2.0",
   "description": "Load any CDN async",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -68,7 +68,6 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9"
   },
-  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
