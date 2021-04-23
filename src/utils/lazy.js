@@ -38,6 +38,12 @@ export default class Lazy {
     this.isLoaded = false;
   }
 
+  checkCacheBurst(str) {
+    const check = str.split('?');
+    if (check.length > 1) return { type: check[0], date: `?${check[1]}` };
+    return { type: check[0], date: '' };
+  }
+
   /**
    * @memberof Lazy
    * @method decisorType
@@ -47,10 +53,11 @@ export default class Lazy {
   decisorType() {
     const { _src, _async } = privateProperties.get(this);
     if (!_src) throw new Error(`You didn't provide a src`);
-    const type = _src.split('.').pop();
+    const { type, date } = this.checkCacheBurst(_src.split('.').pop());
 
-    if (type === 'js') return createElement('script', { type: 'text/javascript', async: _async, src: _src });
-    else if (type === 'css') return createElement('link', { rel: 'stylesheet', href: _src });
+    if (type === 'js')
+      return createElement('script', { type: 'text/javascript', async: _async, src: `${_src}${date}` });
+    else if (type === 'css') return createElement('link', { rel: 'stylesheet', href: `${_src}${date}` });
   }
 
   /**
