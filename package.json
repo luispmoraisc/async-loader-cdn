@@ -1,6 +1,6 @@
 {
   "name": "async-loader-cdn",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Load any CDN async",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
